@@ -1,0 +1,10 @@
+~/.aws/credentials
+~/.aws/config
+
+$env:AWS_PROFILE="default"
+
+agentcore configure -e strands_agent_file_system.py
+
+agentcore configure --entrypoint strands_agent_file_system.py -er arn:aws:iam::928738046450:role/agentcorehung
+
+agentcore invoke '{\"prompt\": \"Command to create new folder in Windows\"}'
